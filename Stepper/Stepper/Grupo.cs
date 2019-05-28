@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Stepper
 {
-    class Participante : Pessoa
+    class Grupo
     {
-        public String Observacao { set; get; }
+        public Byte Numero { set; get; }
 
-        public Participante() { }
+        public Grupo() { }
+
+        public void GerarConfiguracoes()
+        {
+
+        }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Stepper
 {
-    class Participante : Pessoa
+    class Rodada
     {
-        public String Observacao { set; get; }
+        public Byte Numero { set; get; }
 
-        public Participante() { }
+        public Rodada() { }
     }
 }
