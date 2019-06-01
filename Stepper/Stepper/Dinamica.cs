@@ -26,7 +26,7 @@ namespace Stepper
             Participantes.Add(participante);
         }
 
-        public void GerarRodadas() { }
+        public void GerarRodadasEGrupos() { }
         public void GerarCartoes() { }
     }
 }

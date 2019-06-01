@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Stepper
 {
-    public partial class Form1 : Form
+    public partial class FrmPrincipal : Form
     {
-        public Form1()
+        public FrmPrincipal()
         {
             InitializeComponent();
             teste();
@@ -33,7 +33,7 @@ namespace Stepper
             din.AdicionarDocente(d);
             din.AdicionarParticipante(p);
             */
-
+            /*
             // TESTE DO METODO DIVISORES
             List<Byte> div;
 
@@ -47,6 +47,15 @@ namespace Stepper
             }
 
             lblDivisores.Text = resultado;
+            */
+        }
+
+        private void itemMenuArquivoNovaDinamica_Click(object sender, EventArgs e)
+        {
+            FrmNovaDinamica novaDin = new FrmNovaDinamica();
+            novaDin.MdiParent = this;
+            novaDin.WindowState = FormWindowState.Maximized;
+            novaDin.Show();
         }
     }
 }
