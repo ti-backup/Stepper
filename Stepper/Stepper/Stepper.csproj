@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Grupo.cs" />
     <Compile Include="NumeroChave.cs" />
+    <Compile Include="Opcao.cs" />
     <Compile Include="Participante.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="Program.cs" />

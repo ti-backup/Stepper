@@ -15,6 +15,7 @@ namespace Stepper
     public partial class FrmNovaDinamica : Form
     {
         List<Participante> Participantes;
+        NumeroChave nc;
 
         public FrmNovaDinamica()
         {
@@ -60,7 +61,7 @@ namespace Stepper
             Excel.Range xlRange = xlWorksheet.UsedRange;
 
             Byte numColunas = 1;
-            Byte numLinhas = 7;
+            Byte numLinhas = 14;
 
             for (Byte i = 1; i <= numColunas; i++)
             {
@@ -87,6 +88,22 @@ namespace Stepper
 
             xlApp.Quit();
             Marshal.ReleaseComObject(xlApp);
+        }
+
+        private void btnOpcoes_Click(object sender, EventArgs e)
+        {
+            nc = new NumeroChave((Byte)Participantes.Count);
+            String resultado = "";
+            foreach (Opcao t in nc.OpcoesGrupos)
+            {
+                resultado += "[" + t.NumeroGrupos + ", " + t.Membros + "]";
+                if (t.ComplementoGrupos != 0)
+                {
+                    resultado += " e [" + t.ComplementoGrupos + ", " + t.ComplementoMembros + "]";
+                }
+                resultado += Environment.NewLine;
+            }
+            txtOpcoes.Text = resultado;
         }
     }
 }

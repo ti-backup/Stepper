@@ -8,29 +8,71 @@ namespace Stepper
 {
     class NumeroChave
     {
-        public Byte Numero { set; get; }
+        public Byte Numero { private set; get; }
         public Boolean Primo { private set; get; }
-        private List<Trio> DivisoresExatos { set; get; }
-        private List<Trio> DivisoresNExatos { set; get; }
+        public List<Opcao> OpcoesGrupos { set; get; }
 
         public NumeroChave(Byte numero)
         {
             this.Numero = numero;
+            OpcoesGrupos = new List<Opcao>();
+            Divisores(this.Numero, true);
+            if (VerificaPrimo())
+                Divisores((Byte)(this.Numero - 1), false);
         }
 
-        public void Divisores()
+        private Boolean VerificaPrimo()
+        {
+            if (OpcoesGrupos.Count == 0)
+                Divisores(this.Numero, true);
+
+            if (this.Numero == 1) this.Primo = false;
+            else
+            {
+                if (OpcoesGrupos.Count == 2)
+                {
+                    this.Primo = true;
+                }
+                else
+                {
+                    this.Primo = false;
+                }
+            }
+            return this.Primo;
+        }
+
+        private void Divisores(Byte numero, Boolean exato)
         {
             Byte resto = 0;
+            Byte numGrupos;
+            Byte numMembros;
             for (Byte i = 1; i <= Numero; i++)
             {
                 resto = Convert.ToByte(Numero % i);
                 if (resto == 0)
                 {
-                    Trio t = new Trio();
-                    t.Divisor = i;
-                    t.Resultado = Convert.ToByte(Numero / i);
-                    t.Resto = resto;
-                    DivisoresExatos.Add(t);
+                    if (exato)
+                    {
+                        Opcao op1 = new Opcao();
+                        op1.NumeroGrupos = i;
+                        op1.Membros = Convert.ToByte(numero / i);
+                        OpcoesGrupos.Add(op1);
+                    }
+                    else
+                    {
+                        // TRATAMENTO PARA EVITAR OPCAO COM ZERO GRUPOS
+                        if (i == 1) continue;
+
+                        numGrupos = (Byte)(i - 1);
+                        numMembros = Convert.ToByte(numero / i);
+
+                        Opcao op1 = new Opcao();
+                        op1.NumeroGrupos = numGrupos;
+                        op1.Membros = numMembros;
+                        op1.ComplementoGrupos = 1;
+                        op1.ComplementoMembros = (Byte)(numMembros + 1);
+                        OpcoesGrupos.Add(op1);
+                    }
                 }
             }
         }

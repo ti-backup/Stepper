@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvParticipantes = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.participanteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -38,10 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ofdArquivo = new System.Windows.Forms.OpenFileDialog();
-            this.participanteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnOpcoes = new System.Windows.Forms.Button();
+            this.txtOpcoes = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParticipantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.participanteBindingSource)).BeginInit();
@@ -79,6 +81,32 @@
             this.dgvParticipantes.ReadOnly = true;
             this.dgvParticipantes.Size = new System.Drawing.Size(188, 129);
             this.dgvParticipantes.TabIndex = 1;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // observacaoDataGridViewTextBoxColumn
+            // 
+            this.observacaoDataGridViewTextBoxColumn.DataPropertyName = "Observacao";
+            this.observacaoDataGridViewTextBoxColumn.HeaderText = "Observação";
+            this.observacaoDataGridViewTextBoxColumn.Name = "observacaoDataGridViewTextBoxColumn";
+            this.observacaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // participanteBindingSource
+            // 
+            this.participanteBindingSource.DataSource = typeof(Stepper.Participante);
             // 
             // btnAdicionar
             // 
@@ -137,37 +165,31 @@
             // 
             this.ofdArquivo.FileName = "openFileDialog1";
             // 
-            // participanteBindingSource
+            // btnOpcoes
             // 
-            this.participanteBindingSource.DataSource = typeof(Stepper.Participante);
+            this.btnOpcoes.Location = new System.Drawing.Point(239, 28);
+            this.btnOpcoes.Name = "btnOpcoes";
+            this.btnOpcoes.Size = new System.Drawing.Size(269, 23);
+            this.btnOpcoes.TabIndex = 1;
+            this.btnOpcoes.Text = "Gerar Opções";
+            this.btnOpcoes.UseVisualStyleBackColor = true;
+            this.btnOpcoes.Click += new System.EventHandler(this.btnOpcoes_Click);
             // 
-            // idDataGridViewTextBoxColumn
+            // txtOpcoes
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // observacaoDataGridViewTextBoxColumn
-            // 
-            this.observacaoDataGridViewTextBoxColumn.DataPropertyName = "Observacao";
-            this.observacaoDataGridViewTextBoxColumn.HeaderText = "Observação";
-            this.observacaoDataGridViewTextBoxColumn.Name = "observacaoDataGridViewTextBoxColumn";
-            this.observacaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.txtOpcoes.Location = new System.Drawing.Point(239, 57);
+            this.txtOpcoes.Multiline = true;
+            this.txtOpcoes.Name = "txtOpcoes";
+            this.txtOpcoes.Size = new System.Drawing.Size(269, 200);
+            this.txtOpcoes.TabIndex = 2;
             // 
             // FrmNovaDinamica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 396);
+            this.ClientSize = new System.Drawing.Size(522, 396);
+            this.Controls.Add(this.txtOpcoes);
+            this.Controls.Add(this.btnOpcoes);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmNovaDinamica";
             this.Text = "Nova Dinâmica";
@@ -176,6 +198,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvParticipantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.participanteBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +217,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource participanteBindingSource;
+        private System.Windows.Forms.Button btnOpcoes;
+        private System.Windows.Forms.TextBox txtOpcoes;
     }
 }
