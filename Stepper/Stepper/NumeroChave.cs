@@ -46,9 +46,9 @@ namespace Stepper
             Byte resto = 0;
             Byte numGrupos;
             Byte numMembros;
-            for (Byte i = 1; i <= Numero; i++)
+            for (Byte i = 1; i <= numero; i++)
             {
-                resto = Convert.ToByte(Numero % i);
+                resto = Convert.ToByte(numero % i);
                 if (resto == 0)
                 {
                     if (exato)
