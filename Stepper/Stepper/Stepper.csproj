@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConectaBD.cs" />
     <Compile Include="Dinamica.cs" />
     <Compile Include="Docente.cs" />
     <Compile Include="FrmPrincipal.cs">
@@ -79,6 +80,7 @@
       <DependentUpon>FrmNovaDinamica.cs</DependentUpon>
     </Compile>
     <Compile Include="Grupo.cs" />
+    <Compile Include="IDao.cs" />
     <Compile Include="NumeroChave.cs" />
     <Compile Include="Opcao.cs" />
     <Compile Include="Participante.cs" />
