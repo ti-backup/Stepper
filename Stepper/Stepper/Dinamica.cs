@@ -9,17 +9,12 @@ namespace Stepper
     class Dinamica
     {
         public Int32 Id { set; get; }
-        private Docente Professor { set; get; }
+        public Docente Professor { set; get; }
         private List<Rodada> Rodadas { set; get; }
         private List<Grupo> Grupos { set; get; }
         private List<Participante> Participantes { set; get; }
 
         public Dinamica() { }
-
-        public void AdicionarDocente(Docente professor)
-        {
-            this.Professor = professor;
-        }
 
         public void AdicionarParticipante(Participante participante)
         {

@@ -44,6 +44,9 @@
             this.ofdArquivo = new System.Windows.Forms.OpenFileDialog();
             this.btnOpcoes = new System.Windows.Forms.Button();
             this.txtOpcoes = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDocente = new System.Windows.Forms.TextBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParticipantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.participanteBindingSource)).BeginInit();
@@ -58,7 +61,7 @@
             this.groupBox1.Controls.Add(this.txtArquivo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 103);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 245);
             this.groupBox1.TabIndex = 0;
@@ -167,7 +170,7 @@
             // 
             // btnOpcoes
             // 
-            this.btnOpcoes.Location = new System.Drawing.Point(239, 28);
+            this.btnOpcoes.Location = new System.Drawing.Point(241, 109);
             this.btnOpcoes.Name = "btnOpcoes";
             this.btnOpcoes.Size = new System.Drawing.Size(269, 23);
             this.btnOpcoes.TabIndex = 1;
@@ -177,17 +180,46 @@
             // 
             // txtOpcoes
             // 
-            this.txtOpcoes.Location = new System.Drawing.Point(239, 57);
+            this.txtOpcoes.Location = new System.Drawing.Point(241, 138);
             this.txtOpcoes.Multiline = true;
             this.txtOpcoes.Name = "txtOpcoes";
             this.txtOpcoes.Size = new System.Drawing.Size(269, 200);
             this.txtOpcoes.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Docente:";
+            // 
+            // txtDocente
+            // 
+            this.txtDocente.Location = new System.Drawing.Point(70, 13);
+            this.txtDocente.Name = "txtDocente";
+            this.txtDocente.Size = new System.Drawing.Size(100, 20);
+            this.txtDocente.TabIndex = 4;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(176, 11);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 5;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // FrmNovaDinamica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 396);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.txtDocente);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtOpcoes);
             this.Controls.Add(this.btnOpcoes);
             this.Controls.Add(this.groupBox1);
@@ -219,5 +251,8 @@
         private System.Windows.Forms.BindingSource participanteBindingSource;
         private System.Windows.Forms.Button btnOpcoes;
         private System.Windows.Forms.TextBox txtOpcoes;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDocente;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }

@@ -105,5 +105,35 @@ namespace Stepper
             }
             txtOpcoes.Text = resultado;
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Dinamica din = new Dinamica();
+            Docente doc = new Docente();
+
+            doc.Nome = txtDocente.Text;
+            din.Professor = doc;
+
+            try
+            {
+                DinamicaDao dinDao = new DinamicaDao();
+                dinDao.Adiciona(din);
+                MessageBox.Show(
+                    "Cadastro realizado com sucesso!",
+                    "Cadastro de Dinâmica",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Erro ao cadastrar a dinâmica: " + ex.Message,
+                    "Cadastro de Dinâmica",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
+        }
     }
 }

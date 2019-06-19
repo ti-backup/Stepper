@@ -68,6 +68,7 @@
             this.itemMenuArquivoConsultarDinamica.Name = "itemMenuArquivoConsultarDinamica";
             this.itemMenuArquivoConsultarDinamica.Size = new System.Drawing.Size(187, 22);
             this.itemMenuArquivoConsultarDinamica.Text = "&Consultar Dinâmica...";
+            this.itemMenuArquivoConsultarDinamica.Click += new System.EventHandler(this.itemMenuArquivoConsultarDinamica_Click);
             // 
             // itemMenuArquivoSair
             // 

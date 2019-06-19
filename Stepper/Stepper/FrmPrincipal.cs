@@ -57,5 +57,13 @@ namespace Stepper
             novaDin.WindowState = FormWindowState.Maximized;
             novaDin.Show();
         }
+
+        private void itemMenuArquivoConsultarDinamica_Click(object sender, EventArgs e)
+        {
+            FrmConsultaDinamica consulta = new FrmConsultaDinamica();
+            consulta.MdiParent = this;
+            consulta.WindowState = FormWindowState.Maximized;
+            consulta.Show();
+        }
     }
 }
