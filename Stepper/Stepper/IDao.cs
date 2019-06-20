@@ -11,7 +11,7 @@ namespace Stepper
     {
         DataTable BuscaTodos();
         T BuscaPorId(Int32 id);
-        void Atualiza(T obj);
+        Boolean Atualiza(T obj);
         void Remove(Int32 id);
         void Adiciona(T obj);
     }

@@ -32,7 +32,7 @@ namespace Stepper
             ExibeTodosRegistros();
         }
 
-        private void ExibeTodosRegistros()
+        public void ExibeTodosRegistros()
         {
             DinamicaDao dinDao = new DinamicaDao();
             DataTable dt = dinDao.BuscaTodos();
@@ -42,6 +42,21 @@ namespace Stepper
         private void ExibeRegistros(DataTable dados)
         {
             dgvDinamicas.DataSource = dados;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection linhas = dgvDinamicas.SelectedRows;
+            if (linhas.Count != 1)
+            {
+                MessageBox.Show("Selecione um registro para atualizá-lo");
+                return;
+            }
+
+            Int32 id = Convert.ToInt32(linhas[0].Cells[0].Value);
+            FrmAtualizaDinamica atualiza = new FrmAtualizaDinamica(this, id);
+            atualiza.MdiParent = this.MdiParent;
+            atualiza.Show();
         }
     }
 }

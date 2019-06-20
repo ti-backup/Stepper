@@ -9,6 +9,7 @@ namespace Stepper
     class Dinamica
     {
         public Int32 Id { set; get; }
+        public DateTime Data { set; get; }
         public Docente Professor { set; get; }
         private List<Rodada> Rodadas { set; get; }
         private List<Grupo> Grupos { set; get; }

@@ -30,6 +30,7 @@
         {
             this.dgvDinamicas = new System.Windows.Forms.DataGridView();
             this.btnRemover = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDinamicas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,11 +56,22 @@
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(178, 303);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // FrmConsultaDinamica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 360);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnRemover);
             this.Controls.Add(this.dgvDinamicas);
             this.Name = "FrmConsultaDinamica";
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView dgvDinamicas;
         private System.Windows.Forms.Button btnRemover;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
